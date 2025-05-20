@@ -12,7 +12,7 @@ load_dotenv()
 app = FastAPI()
 
 # Add session middleware for storing user info
-app.add_middleware(SessionMiddleware, secret_key="your-secret-key-here")
+app.add_middleware(SessionMiddleware, secret_key="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")
 
 # Configure OAuth client for Google
 oauth = OAuth()
