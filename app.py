@@ -18,8 +18,8 @@ app.add_middleware(SessionMiddleware, secret_key="GOCSPX-kktFH2zaYIy2KST6iPLR3gW
 oauth = OAuth()
 oauth.register(
     name="google",
-    client_id=os.getenv("GOOGLE_CLIENT_ID"),
-    client_secret=os.getenv("GOOGLE_CLIENT_SECRET"),
+    client_id="http://970432637656-f9jpv0pgak2akecl2mvltk1lbaucc03r.apps.googleusercontent.com",
+    client_secret="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",
     server_metadata_url="https://accounts.google.com/.well-known/openid-configuration",
     client_kwargs={"scope": "openid email profile"},
 )
