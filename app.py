@@ -12,14 +12,14 @@ load_dotenv()
 app = FastAPI()
 
 # Add session middleware for storing user info
-app.add_middleware(SessionMiddleware, secret_key="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")
+app.add_middleware(SessionMiddleware, secret_key="your-secret-key-here")
 
 # Configure OAuth client for Google
 oauth = OAuth()
 oauth.register(
     name="google",
-    client_id="http://970432637656-qpdq23f5np9qi4ohs3m6vvp9q6bgn0bc.apps.googleusercontent.com",
-    client_secret="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",
+    client_id=os.getenv("GOOGLE_CLIENT_ID"),
+    client_secret=os.getenv("GOOGLE_CLIENT_SECRET"),
     server_metadata_url="https://accounts.google.com/.well-known/openid-configuration",
     client_kwargs={"scope": "openid email profile"},
 )
